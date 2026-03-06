@@ -8,7 +8,9 @@ import PCAExplorer from './components/PCAExplorer';
 import PolicyComparison from './components/PolicyComparison';
 import { StepForward, RotateCcw, Play, Square } from 'lucide-react';
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL !== undefined
+  ? import.meta.env.VITE_API_URL
+  : 'http://localhost:8000';
 
 function App() {
   const [config, setConfig] = useState({
@@ -224,8 +226,8 @@ function App() {
             onClick={handlePlay}
             disabled={simulationState.isDone && !isPlaying}
             className={`flex items-center gap-2 px-5 py-2 rounded-md border text-sm font-semibold transition-all ${isPlaying
-                ? 'bg-orange-500/20 text-orange-400 border-orange-500/40 hover:bg-orange-500/30'
-                : 'bg-[#00d4aa]/20 text-[#00d4aa] border-[#00d4aa]/40 hover:bg-[#00d4aa]/30'
+              ? 'bg-orange-500/20 text-orange-400 border-orange-500/40 hover:bg-orange-500/30'
+              : 'bg-[#00d4aa]/20 text-[#00d4aa] border-[#00d4aa]/40 hover:bg-[#00d4aa]/30'
               } disabled:opacity-40`}
           >
             {isPlaying
