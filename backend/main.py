@@ -20,7 +20,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        "https://chasing-fairy-circles.vercel.app",
+        "https://chasing-fairy-circles-webapp.vercel.app",
         "https://chasing-fairy-circles.valeriacartagena.com",
     ],
     allow_credentials=True,
